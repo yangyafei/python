@@ -22,6 +22,8 @@ list 列表
 
 number 数值
 
+os 文件目录操作
+
 set 集合
 
 string 字符串

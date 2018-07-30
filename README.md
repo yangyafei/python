@@ -1,29 +1,18 @@
 # python
 
-hello world 编程第一步
-
-wns 抓取网站信息，未完 待续
-
-number 数值
-
-string 字符串
-
-list 列表
-
-tuple 元组
-
-dictionary 字典
-
-set 集合
-
-condition 条件语句
-
 class 类
-
-file 文件操作
-
+condition 条件语句
+config 配置信息
+dictionary 字典
+file 文件读写
 function 函数
-
+hello world
 input 输入输出
-
-iterator 迭代器
+itrator 迭代器和生成器
+list 列表
+number 数值
+set 集合
+string 字符串
+ttt.txt 文件操作demo
+tuple 元组
+wns 威尼斯数据

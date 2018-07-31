@@ -8,6 +8,8 @@ config 配置信息
 
 dictionary 字典
 
+exception 错误和异常
+
 file 文件读写
 
 function 函数

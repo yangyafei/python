@@ -51,34 +51,5 @@ Socket是套接字，应用程序通常通过套接字向网络发出请求或�
 
 
 
-'''
-httplib是一个相对底层的HTTP请求模块，其上有专门的包装模块，如URLlib内建模块，goto等第三方魔力
-但是封装越多越不灵活，比如urllib模块里请求错误时就不会返回结果页的内容，只有头信息，
-对于某些需要检测错误请求的场景不适合，所以就得用httplib模块
-'''
-
-# httplib.httpconnection 创建一个http类型的请求链接
-
-
-import http.client
-import urllib
-def sendHttp():
-    data = urllib.urllencode({'@number':12524, '@type':'issue', '@action':'show'})
-    headers = {
-        "Content-type": 'application/x-www-form-urlencoded',
-        "Accept": 'text/plain'
-    }
-
-    conn = http.client.HTTPConnection('bugs.python.org')
-    conn.request('POST', '/', data, headers)
-    httpres = conn.getresponse()
-
-    print(httpres.status)
-    print(httpres.reason)
-    print(httpres.read())
-
-if __name__ == '__main__':
-    sendHttp()
-
 
 

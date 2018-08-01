@@ -98,3 +98,6 @@ class StrVer:
         return "这个人名字是%s 已经有%d岁了" %(self.name, self.age)
 a = StrVer('yang',26)
 print(a)
+
+
+

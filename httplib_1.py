@@ -55,7 +55,7 @@ httplib是一个相对底层的HTTP请求模块，其上有专门的包装模块
 import http.client
 import urllib
 def sendHttp():
-    data = urllib.parse.urlencode({'@number':12524, '@type':'issue', '@action':'show'})
+    data = urllib.parse.urlencode({'wd':'python'})
     headers = {
         "Content-type": 'application/x-www-form-urlencoded',
         "Accept": 'text/plain'

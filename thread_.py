@@ -10,7 +10,7 @@ import time
 
 def fun():
     cnt = 0
-    for i in range(10000000):
+    for i in range(500000000):
 	    cnt += 1
     return True
 

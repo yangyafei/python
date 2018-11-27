@@ -61,7 +61,7 @@ def sendHttp():
         "Accept": 'text/plain'
     }
 
-    conn = http.client.HTTPConnection('baidu.com')
+    conn = http.client.HTTPConnection('news.baidu.com')
     conn.request('POST', '/', data, headers)
     httpres = conn.getresponse()
 

@@ -97,3 +97,38 @@ for p in range(2):
 for c in range(2):
     c = Consumer()
     c.start()
+
+
+
+alist = None
+condition = threading.Condition()
+def doSet():
+    global alist
+    if condition.acquire():
+        while alist is None:
+            condition.wait()
+        for i in range(len(alist))[::-1]:
+            alist[i] = 1
+        condition.release()
+def doPrint():
+    global alist
+    if condition.acquire():
+        while alist is None:
+            condition.wait()
+        for i in alist:
+            print('print i:', i)
+        condition.release()
+def doCreate():
+    global alist
+    if condition.acquire():
+        if alist is None:
+            alist = [0 for i in range(10)]
+            condition.notifyAll()
+        condition.release()
+tset = threading.Thread(target=doSet, name='tset')
+tprint = threading.Thread(target=doPrint, name='tprint')
+tcreate = threading.Thread(target=doCreate, name='tcreate')
+tset.start()
+tprint.start()
+tcreate.start()
+

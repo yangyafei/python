@@ -76,3 +76,22 @@ print('\n\nfouth thread end')
 
 
 
+# join堵塞 每个进程都都被上个进程的join堵塞，失去多线程的意义
+def action(arg):
+    time.sleep(1)
+    print('the fiveth thread start and name is %s\r' % threading.currentThread().getName())
+    print('the five arg is %s\r' % arg)
+for i in range(4):
+    t = threading.Thread(target=action, args=(i,))
+    t.setDaemon(True)
+    t.start()
+    t.join()
+time.sleep(2)
+print('\n\nfive thread end')
+
+
+
+
+
+
+
